@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <include file="$(find osm_planner)/launch/planner_node.launch" ns="osm_planner">
+    <!--Defining this arg is necessary to change file path -->
+    <arg name="osm_map_path" default="$(find osm_planner)/osm_example/peter_north.osm"/>
+
+
+  </include>
+
+  <!--Simulation of navigation-->
+  <!-- <node name="navigation_example" pkg="osm_planner" type="navigation_example" ns="osm_planner" output="screen"/> -->
+  <node name="maplite_pandemonium" pkg="maplite" type="maplite" ns="maplite" output="screen">
+      <param name="lat_zero"      value = "42.294068"  type = "double" />
+      <param name="lon_zero"      value = "-83.709846" type = "double" />
+
+  </node>
+  
+  <!-- MOVED TO PICTURE TO MAP REPO :  -->
+  
+          <!-- <node name="osm_pic" pkg="osm_planner" type="osm_picture" ns="osm_picture" output="screen">
+            <param name="osm_pic_path" value="$(find osm_planner)/osm_example/image_match/peter_north.png"/>
+            <param name="background_pic_path" value = "$(find osm_planner)/osm_example/image_match/background.jpeg"/>
+            <param name="debug_messages"      value = "true" type = "bool" />
+          </node> -->
+
+
+        <!-- <node name="realsense_node" pkg="osm_planner" type="realsense_node.py" ns="osm_picture" output="screen">
+        </node> -->
+
+
+</launch>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!--Simulation of navigation-->
+  <!-- <node name="navigation_example" pkg="osm_planner" type="navigation_example" ns="osm_planner" output="screen"/> -->
+  <node name="maplite_pandemonium" pkg="maplite" type="maplite" ns="maplite" output="screen">
+      <param name="lat_zero"      value = "42.294068"  type = "double" />
+      <param name="lon_zero"      value = "-83.709846" type = "double" />
+
+  </node>
+
+</launch>
